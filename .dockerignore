@@ -1,0 +1,7 @@
+.DStore
+.dockerignore
+Dockerfile
+buildContainers.sh
+predictions
+predictions/*
+*.tsv

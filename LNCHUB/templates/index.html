@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lncHUB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="{{ url_for('static', filename='images/webicon.png') }}">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli|Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  
+  <script
+    src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script
+    src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.1/bootstrap-slider.js"></script>
+<!-- Tags -->
+<!-- <script src="js/jquery-ui.js"></script>  -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <script src="{{ url_for('static', filename='scripts/control.js' ) }}"></script>
+  
+  <style>
+    body{
+      background: rgb(80,172,232);
+      background: linear-gradient(120deg, rgba(80,172,232,1) 0%, rgba(80,172,232,1) 35%, rgba(211,248,255,1) 100%);
+      
+      font-family: 'Titillium Web', ;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+      color: white;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #ffffff;
+      color: white;
+      padding: 15px;
+    }
+    
+    .logo{
+      max-width: 240px;
+      width: 100%;
+      padding: 20px;
+    }
+    .rnaicon{
+      width: 20px;
+    }
+    .searchlnc{
+      height: 40px;
+    }
+    
+    .content{
+      #background-color: #50ace8;
+    }
+    
+    .nav-pills li a{
+      border-radius: 1px;
+      color: white;
+      font-family: 'Nanum Gothic' !important;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    
+    .nav-pills li .active{
+      background-color: #1089c2 !important;
+    }
+    
+    .nav-pills>li.active>a{
+      background-color: #1089c2 !important;
+    }
+    
+    .nav-pills li a:hover{
+      background-color: #1089c2 !important;
+    }
+    
+    .nav-pills > .active > a, .nav-pills > .active > a:hover {
+        background-color: #1089c2 !important;
+    }
+    
+    /* Red border */
+    hr.menu {
+      border-top: 1px solid #6c7dba;
+    }
+    
+    .ui-autocomplete { height: 200px; overflow-y: scroll; overflow-x: hidden;}
+    
+    .lnccontent{
+      margin: 30px;
+      padding: 50px;
+      background-color: white;
+      width: 100%;
+      border-radius: 2px;
+      min-height: 200px;
+    }
+    
+    .table_ranks{
+      font-weight: bold;
+      text-align: center;
+      padding: 8px;
+    }
+    
+    .table_scores{
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .stickyone{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 0 15px;
+    }
+    
+    th{
+      text-align: left;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .logo{
+        max-width: 160px;
+      }
+      .row.content {height: auto;}
+      
+      .lnccontent{
+        margin: -10px;
+        padding-top: 20px;
+        margin-right: -5px !important;
+      }
+      
+      .rightpanel{
+        margin-right: 5px;
+        padding-right: 0px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<body class="Site">
+  
+    <div class="content Site-content">
+  
+        <div class="container2">
+
+  <div class="row content">
+    <div class="col-sm-3 col-lg-3 sidenav">
+      
+      <img src="{{ url_for('static', filename='images/lnchub.png') }}" class="logo">
+      
+      <div class="input-group">
+        <input id="autolnc" type="text" class="form-control searchlnc" placeholder="Search lncRNA ..." onsubmit="searchlnc()">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" onclick="searchlnc()">
+            <img class="rnaicon" src="{{ url_for('static', filename='images/rna_icon.png') }}">
+          </button>
+        </span>
+      </div><br>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="nav-item"><a id="palnc" class=" nav-link" href="#pathway_pred">KEGG Pathway</a></li>
+        <li class="nav-item"><a id="phlnc" class="nav-link" href="#phenotype_pred">IMPC Mouse Phenotypes</a></li>
+        <li class="nav-item"><a id="prlnc" class="nav-link" href="#process_pred">GO: Biological Process</a></li>
+        <li class="nav-item"><a id="glnc" class="nav-link" href="#gene_pred">Co-expressed Genes</a></li>
+      </ul>
+      <hr class="menu">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="nav-item"><a class="nav-link" href="javascript:home();">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="javascript:showdownloads();">Downloads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#section1">Help</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-lg-9 rightpanel">
+      <div id="lncinfo" class="lnccontent effect7">
+        <h1>lncHUB: Functional predictions of human long non-coding RNAs based on gene co-expression data</h1>
+        <div>
+            long non-coding RNAs (lncRNAs) are defined as RNA transcripts of length exceeding 200 nucleotides that are not translated into protein. While it is estimated that there are over 15,000 lncRNAs encoded in the human genome, whereby many of them serve important function, knowledge about their role in the cell and their association with normal physiology and human disease is mostly unknown. lncHUB provides predictions for such associations based on data from mRNA co-expression.
+            <br>
+            <h3>Instructions:</h3>
+            Select a long non-coding RNA from the search box and submit it to see ranked predictions of its putative functions. lncHUB also lists the top correlated genes based gene expression for each submitted lncRNA.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- End container -->
+</div>
+<!-- End content -->
+
+<div id="footer" class="row">
+    <div class="container">
+
+        <div class="row">
+           <div class="col-sm-4">
+                <a href="https://github.com/MaayanLab/lnchub" target="_blank">
+                    <img src="{{ url_for('static', filename='images/octocat_GH.png') }}" id="GH_logo">
+                </a>
+            </div>
+            
+            <div class="col-sm-4">
+                <a href="http://icahn.mssm.edu/research/labs/maayan-laboratory" target="_blank">
+                    <img src="{{ url_for('static', filename='images/MaayanLab_logo.png') }}">
+                    <p>© The Ma'ayan Laboratory</p>
+                </a> 
+            </div> 
+             <div class="col-sm-4">
+                <a href="https://amp.pharm.mssm.edu/geneshot" target="_blank">
+                    <img src="{{ url_for('static', filename='images/geneshot.png') }}">
+                </a>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="row" id="affiliations">
+            <div class="col-sm-4">
+                <a href="https://druggablegenome.net/" target="_blank">
+                    <img src="{{ url_for('static', filename='images/IDG_filled.png') }}">
+                </a>
+            </div>
+            
+             <div class="col-sm-4">
+                <a href="http://icahn.mssm.edu/research/bioinformatics" target="_blank">
+                    <img src="{{ url_for('static', filename='images/mountsinai.png') }}">
+                </a>
+            </div>
+            
+            <div class="col-sm-4">
+                <a href="http://www.lincs-dcic.org/" target="_blank">
+                    <img src="{{ url_for('static', filename='images/dcic.png') }}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
